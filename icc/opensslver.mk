@@ -30,7 +30,7 @@ OSSL_TAG       = $(OSSL_DIR)/Makefile
 #
 OPENSSL_debug_FLAG = --debug
 OPENSSL_release_FLAG =
-OPENSSL_asan_FLAG = $(OPENSSL_debug_FLAG) -fsanitize=address
+OPENSSL_asan_FLAG = $(OPENSSL_debug_FLAG)
 OPENSSL__FLAG = ${OPENSSL_release_FLAG}
 
 # OpenSSL 1.1.x
