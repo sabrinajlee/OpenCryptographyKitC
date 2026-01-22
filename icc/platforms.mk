@@ -318,13 +318,17 @@ LINUX32_SLDFLAGS = -std=gnu99 -m32 $(LINUX_$(CONFIG)_LDFLAGS) -shared -Wl,-sonam
 ifeq (OFFICIAL, $(BUILD))
 LINUX64_CFLAGS = -std=gnu99 -m64 $(LINUX_$(CONFIG)_CFLAGS) -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fPIC -Wall -c
 LINUX64_CXXFLAGS = -std=gnu99 -m64 $(LINUX_$(CONFIG)_CFLAGS) -D_REENTRANT -fno-strict-aliasing -fPIC -Wall -c
+else ifeq (asan, $(CONFIG))
+# ASAN builds: use relaxed error checking to avoid issues with sanitizer instrumentation and OpenSSL headers
+LINUX64_CFLAGS = -std=gnu99 -m64 $(LINUX_$(CONFIG)_CFLAGS) -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fPIC -Wall -c
+LINUX64_CXXFLAGS = -std=gnu99 -m64 $(LINUX_$(CONFIG)_CFLAGS) -D_REENTRANT -fno-strict-aliasing -fPIC -Wall -c
 else
 LINUX64_CFLAGS = -std=gnu99 -m64 $(LINUX_$(CONFIG)_CFLAGS) -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fPIC -Wall -c \
                  -Werror=incompatible-pointer-types \
                  -Werror=implicit-int \
                  -Werror=implicit-function-declaration \
                  -Werror=return-type \
-                 -Werror=int-conversion   
+                 -Werror=int-conversion
 LINUX64_CXXFLAGS = -std=gnu99 -m64 $(LINUX_$(CONFIG)_CFLAGS) -D_REENTRANT -fno-strict-aliasing -fPIC -Wall -c \
                    -Werror=return-type
 endif
