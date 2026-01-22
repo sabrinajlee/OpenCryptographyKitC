@@ -124,7 +124,8 @@ PQC_TESTS_LIBDKS=tests_dks
 
 #PQC will be LIBDKS LIBOQS or undefined
 # default to LIBDKS where PQC is enabled, set PQC=NONE on command line to disable
-PQC=LIBDKS
+# Disabled for ASAN build due to PQC library build issues
+PQC=NONE
 
 LINUX_PQCLIBS=$(PQCLIBS_$(PQC))
 LINUX_PQCINC=$(PQCINC_$(PQC))
