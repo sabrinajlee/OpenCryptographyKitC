@@ -264,3 +264,48 @@ OLD_ICC		= $($(OPSYS)_OLD_ICC)
 # MUPPET is set by the build system based on FIPS module presence and it also writes gsk_wrap2_a.c to match
 # if we reset it here then we will be inconsistent with gsk_wrap2_a.c which links in FIPS ICCC_ prefix APIs
 #MUPPET = $($(OPSYS)_MUPPET)
+
+#--- Map platform specific definitions to global definitions
+
+SHELL          = $($(OPSYS)_SHELL)
+RM             = $($(OPSYS)_RM)
+MKDIR          = $($(OPSYS)_MKDIR)
+CP             = $($(OPSYS)_CP)
+DEBUGGER       = $($(OPSYS)_DEBUGGER)
+CC             = $($(OPSYS)_CC)
+CXX            = $($(OPSYS)_CXX)
+CFLAGS         = $($(OPSYS)_CFLAGS) $($(BUILD)_CFLAGS)
+CXXFLAGS       = $($(OPSYS)_CXXFLAGS)
+LD             = $($(OPSYS)_LD)
+LD_CXX         = $($(OPSYS)_LD_CXX)
+SLD            = $($(OPSYS)_SLD)
+AR             = $($(OPSYS)_AR)
+LDFLAGS        = $($(OPSYS)_LDFLAGS)
+LDXXFLAGS      = $($(OPSYS)_LDXXFLAGS)
+SLDFLAGS       = $($(OPSYS)_SLDFLAGS)
+ARFLAGS        = $($(OPSYS)_ARFLAGS)
+LDLIBS         = $($(OPSYS)_LDLIBS)
+OBJSUFX        = $($(OPSYS)_OBJSUFX)
+EXESUFX        = $($(OPSYS)_EXESUFX)
+SHLPRFX        = $($(OPSYS)_SHLPRFX)
+SHLSUFX        = $($(OPSYS)_SHLSUFX)
+STLPRFX        = $($(OPSYS)_STLPRFX)
+STLSUFX        = $($(OPSYS)_STLSUFX)
+STRIP          = $($(OPSYS)_$(CONFIG)_STRIP)
+ICC_RUN_SETUP  = $($(OPSYS)_ICC_RUN_SETUP)
+
+CFLAGS2         = $($(OPSYS)_CFLAGS2)
+SLDFLAGS2       = $($(OPSYS)_SLDFLAGS2)
+ICCLIB_LNK      = $($(OPSYS)_ICCLIB_LNK)
+LDFLAGS2        = $($(OPSYS)_LDFLAGS2)
+CFLAGSE         = $($(OPSYS)_CFLAGSE)
+LDFLAGSE        = $($(OPSYS)_LDFLAGSE)
+
+OUT             = $($(OPSYS)_OUT)
+MT		= $($(OPSYS)_MT)
+
+SDKFLAGS        = $($(OPSYS)_SDKFLAGS)
+EX_SUFFIX       = $($(OPSYS)_EX_SUFFIX)
+
+CLEAN400_ICC    = $($(OPSYS)_CLEAN400_ICC)
+CLEAN400_MODS   = $($(OPSYS)_CLEAN400_MODS)
