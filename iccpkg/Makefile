@@ -10,6 +10,9 @@ default: all
 # Makefile needs to define this as relative path from Makefile's dir to the base of ICC source dir
 ICC_ROOT=..
 
+# Default platform - can be overridden with make OPSYS=<platform>
+OPSYS  = AMD64_LINUX
+
 CONFIG = debug
 BUILD = developer
 

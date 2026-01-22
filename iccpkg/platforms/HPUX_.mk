@@ -1,1 +1,0 @@
-include platforms/UNIX.mk
