@@ -267,6 +267,7 @@ OLD_ICC		= $($(OPSYS)_OLD_ICC)
 
 #--- Map platform specific definitions to global definitions
 
+$(OPSYS)_SHELL:=$(SHELL)
 SHELL          = $($(OPSYS)_SHELL)
 RM             = $($(OPSYS)_RM)
 MKDIR          = $($(OPSYS)_MKDIR)
