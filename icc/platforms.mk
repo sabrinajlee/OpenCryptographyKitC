@@ -305,7 +305,7 @@ LINUX_asan_CFLAGS	 = $(LINUX_debug_CFLAGS) -fsanitize=address
 LINUX_beam_CFLAGS    = -g -O3
 LINUX_release_CFLAGS = -g1 -O3
 
-LINUX_asan_LDFLAGS	 = -fsanitize=address
+LINUX_asan_LDFLAGS	 = -g3 -fsanitize=address
 
 # std=gnu99 will allow declaring variables in the for loop header on phelix (gcc 4.1.2/2006)
 LINUX32_CFLAGS = -std=gnu99 -m32 $(LINUX_$(CONFIG)_CFLAGS) -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fPIC -Wall -c
